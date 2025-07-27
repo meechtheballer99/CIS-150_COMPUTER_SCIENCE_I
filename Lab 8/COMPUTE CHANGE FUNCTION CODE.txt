@@ -1,0 +1,42 @@
+
+#include <iostream>
+using namespace std;
+
+// FIXME: Add parameters for dimes, nickels, and pennies. 
+void ComputeChange(int totCents, int& numQuarters, int& numDimes, int& numPennies, int& numNickles) {
+
+   cout << "FIXME: Finish writing ComputeChange" << endl;
+
+   numQuarters = totCents / 25;
+   totCents %= 25;
+   numDimes = totCents / 10;
+   totCents %= 10;
+   numNickles = totCents / 5;
+   totCents %= 5;
+   numPennies = totCents % 100;
+   
+}
+
+int main() {
+   int userCents;
+   int numQuarters = 0;
+   int numDimes = 0;
+   int numPennies = 0;
+   int numNickles = 0;
+   
+   // FIXME add variables for dimes, nickels, pennies
+
+   cout << "Enter total cents: " << endl;
+   cin >> userCents;
+
+   cout << "userCents entered: " << userCents << endl;
+
+   ComputeChange(userCents, numQuarters, numDimes, numPennies, numNickles);
+
+   cout << "Quarters: " << numQuarters << endl;
+   cout << "Dimes: " << numDimes << endl;
+   cout << "Nickles: " << numNickles << endl;
+   cout << "Pennies: " << numPennies << endl;
+
+   return 0;
+}
