@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	int userAge;
+	string userName;
+
+	cout << "Please enter your first name: ";
+	cin >> userName;
+
+	cout << "Please enter your age: ";
+	cin >> userAge;
+
+	if (userAge >= 18)
+	{
+		cout << "Congratulations " << userName << "! " << "Your vote registration was successfully processed." << endl;
+	}
+	else
+	{
+		cout << "Sorry, you are not eligible to vote, " << userName << "." << endl;
+	}
+	cout << "Thank you!(:" << endl;
+
+	system("pause");
+	return 0;
+}

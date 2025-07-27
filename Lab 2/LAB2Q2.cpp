@@ -1,0 +1,49 @@
+
+
+
+/*  *Author: Demetrius Johnson
+	*Creation Date: 22 Jan. 2020
+	*Modification Date: 22 Jan. 2020
+	*Purpose: Prompts the user for two integers and displays the sum of the two integers
+
+	// LAB 2 - CIS 150 --MEECH.cpp
+
+	Question 2: 
+
+	The following program prompts the user for two integers and displays the sum of the two integers.  Complete the missing statements/lines.
+
+	Compile your project and fix any error during the compilation process. 
+
+	*put here header comments that give information about the program
+	 *put here the compiler directive for the library necessary for reading and writin
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int first_Integer, second_Integer, integer_Sum;		// declare three variables of type int
+
+	cout << "Please enter your first integer value: ";	// display a message asking the user to enter a first integer
+
+	cin >> first_Integer;								// get a value from the user for assigning to first_Integer
+
+	cout << "Please enter your second integer value: ";	// display a message asking the user to enter a second integer
+
+	cin >> second_Integer;								// get a value from the user for assigning to second_Integer
+
+	integer_Sum = first_Integer + second_Integer;		// sum the values of first_Integer and second_Integer for assigning to integer_Sum
+													
+	cout << "The sum of your integer values is:    " << first_Integer << " + " << second_Integer << " = " << integer_Sum << endl;
+														//in the above line of code: output of message with calculated integer sum value
+	cout << "Thank you (: \n";
+
+	system("pause");
+
+return 0;
+}
+
+
+
