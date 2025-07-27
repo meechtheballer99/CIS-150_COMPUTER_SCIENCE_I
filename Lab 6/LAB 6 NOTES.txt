@@ -1,0 +1,6 @@
+about 16 (+ sub questions) on the exam that opens monday!!!
+
+no couts in function for lab 6, all of couts should happen in main -- print sum and average in MAIN
+
+*include 0 FOR QUESTION ONE; EX: N=6 --> 6+5+4+3+2+1+0 --> CONVERT TO FLOAT, AND BECAUSE YOU WILL CALCULATE AVERAGE (AS A FLOAT) OF THE INPUT VALUE YOU NEED TO INCLUDE 0.
+

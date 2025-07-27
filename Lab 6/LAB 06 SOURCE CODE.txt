@@ -1,0 +1,197 @@
+
+
+
+/*  
+	*Author: Demetrius Johnson
+	*Creation Date: 19 Feb. 2020
+	*Modification Date: 19 Feb. 2020
+	*Purpose: Computes the sum of N + N-1 up to 0 --> and average of that sum
+
+	// LAB 6 - CIS 150 - MEECH.cpp
+
+	Question 1
+	-------------------------
+
+	Write a program that calls a function calculateSum to calculate the sum from 0 to N integers. 
+	The function calculateSum has one parameter N of type integer and returns an integer which represents the sum from 0 to N, inclusive. 
+
+	Write another function calculateAverage that calculates an average. 
+	This function will have two parameters: the sum and the number of items. It returns the average (of type float). 
+
+	The main function should be responsible for all inputs and outputs. 
+	Your functions will only calculate and return the values and NOT print anything.  
+	N is provided by the user; user input must be asked for repeatedly until a negative integer is provided.
+
+	EX: INPUT IS 3, OUTPUT IS 3+2+1+0=6
+	ANY NEGATIVE # SHOULD BE SIGNAL TO EXIT PROGRAM
+	*hint, can use counter-controlled for loop
+	*be careful for 0 sum average (divide by 0 parameter); should always be divide by 1 or greater since even N=0 means sum=0; average = 0/1 = 0.
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+void MenuONE();
+int calculateSumN_0(int N);
+
+
+int main()
+{
+	int userN;
+	MenuONE();
+	cout << "\nPlease enter a value for N: ";
+	cin >> userN;
+	calculateSumN_0(userN);
+	cout <<"Your N_0 Sum is: " << userN;
+	
+
+	system("pause");
+	return 0;
+}
+
+
+int calculateSumN_0 (int N) {
+	
+	int N_0sum = 0;
+
+	for (; N >= 0; N--) {
+		N_0sum += N;
+
+		
+	}
+
+	return (N_0sum);
+
+}
+void MenuONE() {
+
+	cout << "\n---------------------------------------WELCOME----------------------------------------------------------";
+	cout << "\nThis program computes the sum of integer N + N-1 up to 0\n" <<
+			"and average of that sum.\n\n";
+	cout << "Begin by entering an integer value that is greater than or equal to 0 (integer >=0),\n" <<
+			"The program will determine the sum and the average of that sum\n\n";
+	cout << "for example: N = 3 --> SUM = 3+2+1+0 = 6, and AVERAGE = 6/4 = 1.5" << endl;
+}
+
+
+
+/*  
+	*Author: Demetrius Johnson
+	*Creation Date: 19 Feb. 2020
+	*Modification Date: 19 Feb. 2020
+	*Purpose: Outputs a C shape of specified user input character
+
+	// LAB 6 - CIS 150 - MEECH.cpp
+
+	Question 2
+	-------------------------
+	
+
+	Write a program that prompts users to enter:
+
+	o	The character to use (any character besides *) //don't use this for your test cases
+	o	The width of the display
+	o	The height of the display
+
+	to produce a C shape.  This is an example for width of 10 and height of 9
+
+	**********
+	*        
+	*        
+	*        
+	*        
+	*        
+	*        
+	*        
+	**********
+
+	You must use separate functions to display the vertical and the horizontal lines.
+
+
+	*CALL TO HORZ, THEN VERT, THEN HORZ FUNCTION AGAIN.
+	*BE SURE TO DO HEIGHT MINUS TWO SINCE TWO HORZ FUNCTIONS ACCOUNT FOR 2 OF THE HIEGHT UNITS
+
+
+
+*/
+
+
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+
+
+
+	system("pause");
+	return 0;
+}
+
+
+
+
+
+/*
+	*Author: Demetrius Johnson
+	*Creation Date: 19 Feb. 2020
+	*Modification Date: 19 Feb. 2020
+	*Purpose: Use int& (call by reference) to write functions and use functon call to change int main() values
+
+	// LAB 6 - CIS 150 - MEECH.cpp
+
+	Question 3
+	-------------------------
+	PASS BY REFERENCE
+	-------------------------
+	Consider the following functions:
+
+	void doIt(int &a, int b)
+	{
+		a = a + 5;
+		b = b + 5
+	}
+
+	void doIt2(int a, int& b)
+	{
+		a += 5;
+		b += 5
+	}
+
+	void doIt3(int & a, int& b)
+	{
+		a = a + 5;
+		b += 5
+	}
+
+	Fix any errors in the above functions and write a main program that prompts the user for two integer numbers (num1 and num2). 
+	Then, the main program calls the functions doIt, doIt2, and doIt3 with num1 and num2 as parameters. 
+	The main program will print the content of num1 and num2 to the screen after each function is called. 
+	Add an addendum to the test plan to explain for each function the difference between a and b.
+
+	*addendum = add some paragraphs to the test cases (an additional section) to explain what happens with the a and b for each function call. 
+	CAN PICK ONE TEST CASE AND ADD ADENDUM FOR THAT ONE TEST CASE EXPLAINING WHAT IS HAPPENING FOR EACH FUNCTION AND DIFFERENCE BETWEEN A AND B
+
+
+*/
+
+
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+
+
+
+	system("pause");
+	return 0;
+}
+
+
