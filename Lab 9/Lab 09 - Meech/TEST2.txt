@@ -1,0 +1,7 @@
+1				John				Smith				67
+2				Sarah				Johnson				33
+5				Jim				Robinson				92
+7				Mary				Anderson				106
+99				Michael				Jackson				88
+0				Edward				Cheserek				110
+3				Allen 				Iverson				112

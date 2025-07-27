@@ -1,0 +1,14 @@
+student_ID	firstName		lastName		grade
+
+1		John		Smith		67
+2		Sarah		Johnson		33
+5		Jim		Robinson		92
+7		Mary		Anderson		106
+99		Michael		Jackson		88
+0		Edward		Cheserek		110
+3		Allen		Iverson		112
+
+Number of students in this section: 7
+The CLASS AVERAGE is: 86.8571
+MAX GRADE in the class is: 112_____achieved by Allen Iverson
+MAX GRADE in the class is: 33_____achieved by Sarah Johnson
