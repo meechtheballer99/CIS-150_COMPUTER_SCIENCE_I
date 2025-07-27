@@ -1,0 +1,68 @@
+
+
+//   Purpose: Airline Seat Reservation/Cancellation Program -- Airliner of any size seating (EXTRA CREDIT)
+//   Author: Demetrius E. Johnson
+//   Creation Date: 4-15-20
+//   Last Modification Date: 4-15-20
+//CLASS USED TO STORE FILE DATA
+
+
+#include "RowLetters.h"
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+RowLetters::RowLetters() {
+	rowNumber = 0;
+	lettersInRow = "Row Number and Letters not available";
+}
+
+void RowLetters::setRowNum(int inputNumber) {
+	rowNumber = inputNumber;
+}
+
+int RowLetters::getRowNum() {
+
+	return rowNumber;
+}
+
+void RowLetters::setLettersInRow(string letters) {
+
+	lettersInRow = letters;
+
+}
+
+string RowLetters::getLettersInRow() {
+	
+	return lettersInRow;
+
+}
+
+void RowLetters::exchangeLetterInRow(int stringPosition, string exchangeChar) {
+	
+	lettersInRow.replace(stringPosition, 1, exchangeChar);
+
+}
+
+
+
+
+//TEST FUNCTIONS --NOT NEEDED
+string& RowLetters::getLettersInRowReference() {
+	
+	return lettersInRow;
+
+}
+int& RowLetters::getRowNumReference() {
+	
+	return rowNumber;
+}
+
+
+
+
+
+
