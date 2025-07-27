@@ -1,0 +1,6 @@
+First Name		Last Name		Weekly Pay
+
+John			Smith			150
+Sarah			Johnson			480
+Mary			Taylor			351
+Jim			Stewart			200

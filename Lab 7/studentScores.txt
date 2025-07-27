@@ -1,0 +1,10 @@
+John				Smith				67
+Sarah				Johnson				33
+Jim				Robinson				92
+Mary				Anderson				106
+Michael				Jackson				88
+Edward				Cheserek				110
+Allen 				Iverson				112
+Michael				Jordan				99
+Matthew				Centrowitz			100
+Kobe				Bryant				108
