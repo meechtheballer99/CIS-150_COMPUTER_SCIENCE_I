@@ -1,0 +1,64 @@
+Submission of Your Work
+ 
+You need to prepare and submit ONE SINGLE MS Word document to Canvas (in your lab section) as LastName_FirstName_Lab12.doc. It must contain:
+•	Your NAME
+•	For each question:
+o	Specify the question number.
+o	After reading the question requirements, but before beginning any coding, create the test case table, below, through column Expected Output. Write your program then complete the test table with actual output results and include in your report.
+o	Copy/Paste your completed source code. You must include standard “header” in every program even if code is provided.
+o	Paste in a snippet of output showing results for every listed test case, labeled with test case #
+
+Test Table:
+
+Test #	Valid / Invalid Data	Description of test	Input Value	Expected Output	Actual Output	Test Pass / Fail
+1						
+2						
+3						
+4						
+5						
+6						
+
+o	Add / delete rows from Test Table as necessary
+o	Modify column widths as necessary
+o	Test both valid and invalid input
+o	Test for every output expected
+o	If failure is an expected output and it happens then that test Passes
+o	Any test that fails means the program must be fixed so that it passes the test
+
+ 
+Question 01
+
+In this question, you will create a database with information about US states. You are given usstates.txt which is a file that contains some data about all 50 states. Its columns are, respectively: state abbreviation, state name, capital, population, year it became a state, and number of representatives in congress.
+Your job is to design and write a class, to be named State. The class's private attributes should be the above mentioned six data items (use stateAbrv, stateName, capital, population, year, numCongress); the first three should be string, the last three should be int.
+In addition to the above six attributes, which should be private, the class should also contain the usual public methods, access methods (set/get), and utility methods of your choice. An example of utility method (but feel free to implement any other one is a method that returns the number of state residents per representatives.
+You will then write an implementation for the class (state.cpp) that is compatible with the interface, and that contains the code for its methods.
+You will have a total of three files: state.h, state.cpp, and main.cpp.
+
+Your program should first call a function that reads the data from the file and stores it into a vector or array (your choice) of object of type State.
+Your main program will then present a menu to the user. The menu will consist of the following three options to allow a user to search for information about a given state using your State class:
+1.	Search by state abbreviation (e.g. MI).
+2.	Search by year of statehood (e.g. 1837).
+3.	Exit program.
+   Please enter your choice (1-3):
+Each option in the menu should be executed by a calling function.
+You program, will then output the information in tabulated form:
+State Abrv.    Name     Capital  Population Year #Congress    
+MI	        Michigan   Lansing   9923000   1837     14
+
+
+In the case of option 2, if there are multiple states that have the same year of statehood, then you program must list all of them (one state per row) as shown below:
+State Abr.   Name      Capital   Population Year #Congress 
+CT		 Connecticut Hartford  3591000	1788    5
+GA		 Georgia	   Atlanta   3591000	1788    14
+…
+If a corresponding state is not found in the search, then the following message should be displayed to the user:
+	“No state exists with this information.”
+
+
+Test cases: 
+
+You need to test your program against the following 4 test cases. Include these test cases in your report along with the corresponding screenshots. 
+•	Test option 1 of your menu with any valid state that you’d like
+•	Test option 2 of your menu with 1788 provided as input for the year.
+•	Test option 2 of your menu with 2018 provided as input for the year.
+•	Test option 3 of your menu.
