@@ -1,0 +1,24 @@
+QUESTION 2 HINTS FOR LAB 5
+
+do
+{
+displayMenu(); //or put actual counts (but its better use a void function to do outputs of couts instead of doing a bunch of couts in main, SO write a display menu function to compress your main function to not have so many cout statements simply to display a menu)
+//BEST USE OF VOID FUNCTIONS IS FOR INPUT IS OUTPUT (& FUNCTIONS == POINTER FUNCTIONS) AND FOR MULTIPLE COUT STATEMENTS. 
+menuPrompt    menuInput
+
+	switch (menuInput)
+	{
+	case 'A'
+	case 'a':
+		promt ints
+		computeMax(?,?);
+		display result
+	case 'B':
+	......
+	
+	default:
+	invalid choice
+	}
+
+} while (user's input is not a quit option); //use sentinal value
+

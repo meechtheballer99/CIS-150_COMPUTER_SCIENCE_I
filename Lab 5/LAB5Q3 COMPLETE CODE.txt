@@ -1,0 +1,117 @@
+/*
+	*Author: Demetrius Johnson
+	*Creation Date: 12 Feb. 2020
+	*Modification Date: 12 Feb. 2020
+	*Purpose: Display who is the winner (or if it is a tie) between two basketball teams
+
+	// LAB 5 - CIS 150 - MEECH.cpp
+
+	Question 3
+	-------------------------
+
+	Write a program that prompts users for the name and number of points of two basketball teams. 
+	Then, it uses a nested if to display the winner (if any)
+	or a message stating a tie if both teams have 
+	the same number of points – One screen shot per scenario – use one function 
+	to determine the possible scenarios.
+
+	(input for two teams, team 1 and team 2, then you must figure out who is the winner and display who is the winner (or if it is a tie)
+
+
+
+*/
+
+
+
+using namespace std;
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+//-------------function declarations-------------------------//
+
+void MenuWelcome();
+void MenuTeamScore();
+//-------------function declarations-------------------------//
+
+
+int main()
+{
+	char userChoice;
+
+	do {
+		MenuWelcome();
+		cout << "Input your option here: ";
+		cin >> userChoice;
+		switch (userChoice) {
+		case 'a':
+		case 'A':
+			MenuTeamScore();
+			break;
+		case 'b':
+		case 'B':
+			cout << "\nYou have selected to exit the program. Thank you for ranking with us(:. Good bye...\n\n";
+			break;
+		default:
+			cout << "\nPlease enter a valid option from the menu.\n\n";
+			system("pause\n");
+			break;
+		}
+	} while (userChoice != 'b' && userChoice != 'B');
+
+
+
+
+	system("pause");
+	return (0);
+}
+
+
+
+//----------------------function definitions below this line ------------------------------------//
+
+void MenuWelcome()
+{
+	cout << "----------------------------------------------------------------------------------------------------------------\n" <<
+		" WELCOME -- select one of the following menu choices below by entering letter A or letter B (not case sensitive)\n" <<
+		"----------------------------------------------------------------------------------------------------------------\n" <<
+		"			This program displays the score of two input teams and scores,\n" <<
+		"			and tells who is the winner, who is the loser, or if there is a tie.\n\n" <<
+
+		"A.) Determine Winner/Loser/Tie of two teams\n" <<
+		"B.) Quit					\n" <<
+		"--------------------------------------------------------------------------------------------------------------\n\n";
+
+	return;
+}
+
+void MenuTeamScore() {
+
+	int scoreOne, scoreTwo, highScore;
+	string teamOne, teamTwo, winningTeam;
+
+	cout << "\nOPTION 'A' selected: Determine Winner/Loser/Tie of two teams.\n\n";
+	cout << "What is the name of team 1 and their total score?\n" <<
+		"(enter team name, followed by a space and then the score. EX: TeamName 11): ";
+	cin >> teamOne >> scoreOne;
+	cout << "\nWhat is the name of team 2 and their total score?\n" <<
+		"(enter team name, followed by a space and then the score. EX: TeamName 22): ";
+	cin >> teamTwo >> scoreTwo;
+	cout << "\nThe scores are: \n\n";
+	cout << teamOne << ": " << scoreOne << endl;
+	cout << teamTwo << ": " << scoreTwo << endl << endl;
+	if (scoreOne > scoreTwo) {
+		cout << teamOne << " is winning and has the high score with " << scoreOne << " points.\n\n";
+	}
+	else if (scoreOne < scoreTwo) {
+		cout << teamTwo << " is winning and has the high score with " << scoreTwo << " points.\n\n";
+	}
+	else {
+		cout << "\nThere is no winning team; the scores are tied at " << scoreOne << ".\n";
+	}
+	system("pause");
+	return;
+	
+}

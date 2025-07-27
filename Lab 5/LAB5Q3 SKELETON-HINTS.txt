@@ -1,0 +1,11 @@
+QUESTION 3 HINTS FOR LAB 5
+
+
+
+int stats (int pteam1, int pteam2)
+{
+determine if team 1 winner or team2 winner or tie 			//return 1 for team1, return 2 for team 2, return 0 for tie
+
+	if/else if
+}
+

@@ -1,0 +1,12 @@
+QUESTION 4 HINTS FOR LAB 5
+
+
+
+int highest( )
+
+{
+prompt user for N (count)
+prompt user for count integers (for loop)
+	determine largestSoFar (slides) //see slides in canvas???
+return largestSoFar
+}

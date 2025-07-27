@@ -1,0 +1,540 @@
+
+
+
+/*  
+	*Author: Demetrius Johnson
+	*Creation Date: 12 Feb. 2020
+	*Modification Date: 12 Feb. 2020
+	*Purpose: Computes the average grade in the class
+
+	// LAB 5 - CIS 150 - MEECH.cpp
+
+	Question 1
+	-------------------------
+	Write a program that asks the user for the number of students in the class. 
+	The program asks the user for the grade of each student, computes the average grade in the class, and displays the calculated average.
+	You are required to use the for loop.
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+//-------------function declarations-------------------------//
+
+void MenuOne();												 //
+int compAVG(int x, int y);
+//-------------function declarations-------------------------//
+
+
+int main()
+{
+	int totNumStud, totalNumStudOrigin, studGrade, studGradeSum = 0, studAvgGr, studID = 1;
+	MenuOne(); //instruction menu
+	
+
+	cout << endl << endl << "Enter the value for the number of students in the class: ";
+	cin >> totNumStud;
+	totalNumStudOrigin = totNumStud;
+
+	for (int countONE = totNumStud; countONE > 0; countONE = --totNumStud) {
+
+		cout << "Enter the grade for Student_ID_" ;
+	
+		cout << studID << ": ";
+		cin >> studGrade;	//individual student's grade hold value
+
+		studID++;	 //increment student ID until it reaches totNumStud = the total number of students in the class
+		studGradeSum += studGrade;
+	
+	}
+
+	cout << endl;
+	studAvgGr = compAVG(studGradeSum, totalNumStudOrigin);
+
+	cout << endl << "Total points earned by class: " << studGradeSum << endl;
+	cout << "The average grade per student is: " << studAvgGr << endl;
+
+	cout << endl << "Thank you for averaging with us(:" << endl;
+	
+	
+
+	system("pause");
+	return 0;
+}
+
+
+//----------------------function definitions below this line ------------------------------------//
+
+void MenuOne()
+{
+	cout << "This program computes the average class grade based on (whole number/integer average only)" << endl;
+	cout << "the number of students in a class and each student's" << endl << "respective score." << endl << endl;
+	cout << "To begin, please input total number of students in the class." << endl;
+	cout << "Then, program will prompt you to input the grade for each student." << endl;
+	cout << "Finally, program will compute the average student score for the class." << endl;
+	cout << "This universal program computes the average of any set of data; point scale of class not considered." << endl;
+	return;
+}
+int compAVG(int x, int y)
+{
+	int z;
+	if (y == 0) {
+		cout << "\nNo students in class; no average can be calculated --divide by 0 is undefined." << endl;
+		return (0);
+	}
+	else {
+		z = x / y;
+		return (z);
+	}
+} 
+
+
+
+
+
+
+
+
+
+/*
+	*Author: Demetrius Johnson
+	*Creation Date: 12 Feb. 2020
+	*Modification Date: 12 Feb. 2020
+	*Purpose: Computes and displays Max and Min integer out of any set of inputs of integers
+
+	// LAB 5 - CIS 150 - MEECH.cpp
+
+	Question 2
+	-------------------------
+	Write a program that displays the following menu. 
+	Your program should include two functions that return the minimum and maximum.
+	Do not use cout statements in your function. 
+	The cout statements must be done in main based on the return value from each function.
+
+	Hint: the main program should use a "do while" (guarantees you’ll do at least one pass;
+	with only while it means you could not do any action at all if you don’t meet condition initially!) loop to display the menu.
+
+	---------------------------------------------------------------------------------------------------------
+	WELCOME -- select one of the following choices below by entering letter A, B, or C (not case sensitive):
+	---------------------------------------------------------------------------------------------------------
+
+	A.) Maximum of two integers – separate function
+	B.) Minimum of two integers – separate function
+	C.) Quit
+	---------------------------------------------------------------------------------------------------------
+
+
+	EXAMPLE: 
+	Please select an operation: A
+
+	Please provide the first number: 3
+	Please provide the second number: 5
+	The maximum of 3 and 5 is 5
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+//-------------function declarations-------------------------//
+
+void MenuWelcome();
+void MenuMAX();
+void MenuMIN();
+int twoIntMAX(int x, int y);
+int twoIntMIN(int x, int y);
+//-------------function declarations-------------------------//
+
+
+int main()
+{
+	char userChoice;
+
+	do {
+		MenuWelcome();
+
+		cout << "Input your selection here: ";
+		cin >> userChoice;
+		switch (userChoice) {
+		case 'a':
+		case 'A':
+			MenuMAX();
+			break;
+		case 'b':
+		case 'B':
+			MenuMIN();
+			break;
+		case 'c':
+		case 'C':
+			cout << "\nYou have selected to exit the program. Thank you for ranking with us(:. Good bye...\n\n";
+			break;
+		default:
+			cout << "\nPlease enter a valid option from the menu.\n\n";
+			system("pause\n");
+			break;
+		}
+	} while (userChoice != 'c' && userChoice != 'C');
+
+	
+	
+
+	system("pause");
+	return (0);
+	}
+
+
+
+//----------------------function definitions below this line ------------------------------------//
+
+void MenuWelcome()
+{
+	cout << "---------------------------------------------------------------------------------------------------------------\n" <<
+			" WELCOME -- select one of the following menu choices below by entering letter A, B, or C (not case sensitive)\n" <<
+			"---------------------------------------------------------------------------------------------------------------\n" <<
+
+			"A.) Maximum of two integers\n" <<
+			"B.) Minimum of two integers\n" <<
+			"C.) Quit					\n" <<
+			"-----------------------------------------------------------------------------------------------------------\n\n";
+
+	return;
+}
+
+void MenuMAX(){
+
+	int firstInt, secondInt, intMax;
+
+	cout << "\nOPTION 'A' selected: Maximum of two integers\n\n";
+	cout << "Please input your first integer: ";
+	cin >> firstInt;
+	cout << "Please input your second integer: ";
+	cin >> secondInt;
+	if (firstInt == secondInt) {
+		cout << "\nThe two numbers are equal.\n\n";
+		system("pause\n");
+	}
+	else {
+		intMax = twoIntMAX(firstInt, secondInt);
+		cout << "\nThe largest integer of your two integer inputs is: " << intMax << "\n\n";
+		system("pause\n");
+		return;
+	}
+}
+
+void MenuMIN(){
+
+	int firstInt, secondInt, intMin;
+
+	cout << "\nOPTION 'B' selected: Minimum of two integers\n\n";
+	cout << "Please input your first integer: ";
+	cin >> firstInt;
+	cout << "Please input your second integer: ";
+	cin >> secondInt;
+	if (firstInt == secondInt) {
+		cout << "\nThe two numbers are equal.\n\n";
+		system("pause\n");
+	}
+	else {
+		intMin = twoIntMIN(firstInt, secondInt);
+		cout << "\nThe smallest integer of your two integer inputs is: " << intMin << "\n\n";
+		system("pause\n");
+		return;
+	}
+}
+
+int twoIntMAX(int x, int y){
+
+	int z;
+
+	if (x > y) {
+
+		z = x;
+	}
+	else {
+		z = y;
+		return(z);
+	}
+
+	return(z);
+}
+
+int twoIntMIN(int x, int y){
+
+	int z;
+	if (x < y) {
+
+		z = x;
+	}
+	else {
+		z = y;
+	}
+
+
+	return(z);
+}
+
+
+
+
+
+
+
+/*
+	*Author: Demetrius Johnson
+	*Creation Date: 12 Feb. 2020
+	*Modification Date: 12 Feb. 2020
+	*Purpose: Display who is the winner (or if it is a tie) between two basketball teams
+
+	// LAB 5 - CIS 150 - MEECH.cpp
+
+	Question 3
+	-------------------------
+
+	Write a program that prompts users for the name and number of points of two basketball teams. 
+	Then, it uses a nested if to display the winner (if any)
+	or a message stating a tie if both teams have 
+	the same number of points – One screen shot per scenario – use one function 
+	to determine the possible scenarios.
+
+	(input for two teams, team 1 and team 2, then you must figure out who is the winner and display who is the winner (or if it is a tie)
+
+
+
+*/
+
+
+
+using namespace std;
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+//-------------function declarations-------------------------//
+
+void MenuWelcome();
+void MenuTeamScore();
+//-------------function declarations-------------------------//
+
+
+int main()
+{
+	char userChoice;
+
+	do {
+		MenuWelcome();
+		cout << "Input your option here: ";
+		cin >> userChoice;
+		switch (userChoice) {
+		case 'a':
+		case 'A':
+			MenuTeamScore();
+			break;
+		case 'b':
+		case 'B':
+			cout << "\nYou have selected to exit the program. Thank you for ranking with us(:. Good bye...\n\n";
+			break;
+		default:
+			cout << "\nPlease enter a valid option from the menu.\n\n";
+			system("pause\n");
+			break;
+		}
+	} while (userChoice != 'b' && userChoice != 'B');
+
+
+
+
+	system("pause");
+	return (0);
+}
+
+
+
+//----------------------function definitions below this line ------------------------------------//
+
+void MenuWelcome()
+{
+	cout << "----------------------------------------------------------------------------------------------------------------\n" <<
+		" WELCOME -- select one of the following menu choices below by entering letter A or letter B (not case sensitive)\n" <<
+		"----------------------------------------------------------------------------------------------------------------\n" <<
+		"			This program displays the score of two input teams and scores,\n" <<
+		"			and tells who is the winner, who is the loser, or if there is a tie.\n\n" <<
+
+		"A.) Determine Winner/Loser/Tie of two teams\n" <<
+		"B.) Quit					\n" <<
+		"--------------------------------------------------------------------------------------------------------------\n\n";
+
+	return;
+}
+
+void MenuTeamScore() {
+
+	int scoreOne, scoreTwo, highScore;
+	string teamOne, teamTwo, winningTeam;
+
+	cout << "\nOPTION 'A' selected: Determine Winner/Loser/Tie of two teams.\n\n";
+	cout << "What is the name of team 1 and their total score?\n" <<
+		"(enter team name, followed by a space and then the score. EX: TeamName 11): ";
+	cin >> teamOne >> scoreOne;
+	cout << "\nWhat is the name of team 2 and their total score?\n" <<
+		"(enter team name, followed by a space and then the score. EX: TeamName 22): ";
+	cin >> teamTwo >> scoreTwo;
+	cout << "\nThe scores are: \n\n";
+	cout << teamOne << ": " << scoreOne << endl;
+	cout << teamTwo << ": " << scoreTwo << endl << endl;
+	if (scoreOne > scoreTwo) {
+		cout << teamOne << " is winning and has the high score with " << scoreOne << " points.\n\n";
+	}
+	else if (scoreOne < scoreTwo) {
+		cout << teamTwo << " is winning and has the high score with " << scoreTwo << " points.\n\n";
+	}
+	else {
+		cout << "\nThere is no winning team; the scores are tied at " << scoreOne << ".\n";
+	}
+	system("pause");
+	return;
+	
+}
+
+
+
+
+
+
+/*
+	*Author: Demetrius Johnson
+	*Creation Date: 12 Feb. 2020
+	*Modification Date: 12 Feb. 2020
+	*Purpose: Prompts users for N integers and determines and displays the Max and Min Integer value
+
+	// LAB 5 - CIS 150 - MEECH.cpp
+
+	Question 4
+	-------------------------
+	
+	Write a program that prompts users for N integers
+	and determines and displays the integer 
+	with the highest / lowest value – use separate functions 
+	to return the highest / lowest value.
+
+	DON’T USE COUT IN FUNCTION, COUT SHOULD BE DONE IN MAIN ONLY FOR DISPLAY.
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+//-------------function declarations-------------------------//
+
+void MenuOne();												 //
+int valMAX(int x, int y);
+int valMIN(int x, int y);
+//-------------function declarations-------------------------//
+
+
+int main()
+{
+	int numIntComp, numIntCompOrigin, intVal, intID = 1; //declare integers for the for-loop counter - the number of integers to input and compare - and integer ID, and hold hold value
+	int prevMaxInt, maxIntVal = 0;						//declare maximum integers to be used to store maximum values
+	int prevMinInt, minIntVal = 0;						//declare minimum integers to be used to store minumum values
+	MenuOne();											//instruction menu
+
+
+	cout << endl << endl << "Enter the value for the number of integers you would like to compare: ";
+	cin >> numIntComp;					//number of integers user would like to compare
+	if (numIntComp < 0) { // constraint
+		cout << "\nSorry, invlaid input, number of integers to compared must be a positive integer.\n";
+	}
+	else if (numIntComp == 0) { //constraint
+		cout << "\nUser selects 0 integers to be compared.\n";
+	}
+	else if (numIntComp == 1) { //constraint 
+		cout << "Enter the value for IntegerID_" << intID << ": ";
+		cin >> intVal;
+		cout << "\nOnly one integer selected; your minimum and maximum value is: " << intVal << endl;
+	}
+	else {	//standard execution route using for loop
+		numIntCompOrigin = numIntComp;									//use another variable to store the original value input in to the number of integers the user would like to compare
+		cout << "Enter the value for IntegerID_" << intID << ": ";		//initialize the first integer value of first integer input
+		intID++;
+		cin >> intVal;
+		prevMaxInt = intVal;																			 //set (intialize) max integer hold variable value to the initial user input integer value 
+		prevMinInt = intVal;																			 //set (intialize) min integer hold variable value to the intial user input integer value
+		for (int countONE = numIntComp; countONE > 0; countONE = --numIntComp - 1) {					//use -1 since intID already used once and first user input for integer acquired	
+																										//use for loop to continue calculating max and min of all user integer inputs
+			cout << "Enter the value for IntegerID_" << intID << ": ";
+			cin >> intVal;																				//individual integer hold value
+			intID++;																					//increment Integer ID until it reaches numIntComp = the total number of integers to be compared
+			maxIntVal = valMAX(intVal, prevMaxInt);														//set actual max integer variable (to be output on screen at the end of program) using the function of user input integer and previousMAX = max value from last calculated input (but initially the users first input)
+			prevMaxInt = maxIntVal;																		//max value hold variable updated to current max value for later comparison to next user integer input in valMIN function to update max value again
+			minIntVal = valMIN(intVal, prevMinInt);													 //same operation/logic for maxInt value is applied to minInt value
+			prevMinInt = minIntVal;																	//min value hold variable updated to current minimum value for later comparison to next user integer input in valMIN function to update min value again
+		}
+
+
+		cout << endl;
+		cout << "The maximum integer value in your set of integer values is: " << maxIntVal << endl;
+		cout << "The minimum integer value in your set of integer values is: " << minIntVal << endl << endl;
+	}
+	cout << "Thank you for integer maxing and minning out with us(:\n\n";
+
+	system("pause");
+	return 0;
+}
+
+
+//----------------------function definitions below this line ------------------------------------//
+
+void MenuOne()
+{
+	cout << "This program computes the maximum and minimum integer value out of a given set of integer values.\n" << endl;
+	cout << "The program will prompt you to input the number of integers you would like to compare." << endl;
+	cout << "Then, the program will ask you to input the value for each integer." << endl;
+	cout << "Finally, the program will say what what is the max and min integer value out of all of your inputs." << endl;
+	return;
+}
+int valMAX(int x, int y)
+{
+	int z;
+	if (x == y) {
+		z = x;
+	}
+	else if (x > y) {
+		z = x;
+	}
+	else {
+		z = y;
+
+	}
+	return (z);	
+}
+int valMIN(int x, int y)
+{
+	int z;
+	if (x == y) {
+		z = x;
+	}
+	else if (x < y) {
+		z = x;
+	}
+	else {
+		z = y;
+
+	}
+	return (z);
+}
+
+
+
+
